@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: "Agile Metrics Backend"
+server:
+  port: 8080
