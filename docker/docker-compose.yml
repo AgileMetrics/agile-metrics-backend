@@ -1,0 +1,11 @@
+version: '3'
+services:
+  database:
+    image: 'mongo:4.2'
+    container_name: 'mongo4'
+    environment:
+      - MONGO_INITDB_DATABASE=agile-metrics
+      - MONGO_INITDB_ROOT_USERNAME=mongo-user
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - '27017-27019:27017-27019'
