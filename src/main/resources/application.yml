@@ -3,12 +3,14 @@ spring:
     name: "Agile Metrics Backend"
   data:
     mongodb:
-      #authentication-database: admin
-      username: mongo-user
-      password: secret
-      database: agile-metrics
-      port: 27017
-      host: localhost
+      uri: mongodb://mongo-user:secret@localhost:27017/agile-metrics?authSource=admin
 
 server:
   port: 8080
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        data:
+#          mongodb: DEBUG
