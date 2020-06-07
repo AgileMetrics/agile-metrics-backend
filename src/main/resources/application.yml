@@ -11,6 +11,6 @@ server:
 #logging:
 #  level:
 #    org:
-#      springframework:
+#      springframework: DEBUG
 #        data:
 #          mongodb: DEBUG
