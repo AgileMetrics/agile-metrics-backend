@@ -51,7 +51,14 @@ class CycleTimeScatterPlotService(
                 CycleTime(startDate = LocalDate.of(2020, Month.MAY, 13),
                         endDate = LocalDate.of(2020, Month.MAY, 28)),
                 CycleTime(startDate = LocalDate.of(2020, Month.MAY, 11),
-                        endDate = LocalDate.of(2020, Month.MAY, 28))
+                        endDate = LocalDate.of(2020, Month.MAY, 28)),
+                CycleTime(startDate = LocalDate.of(2020, Month.MAY, 28),
+                        endDate = LocalDate.of(2020, Month.JUNE, 1)),
+                CycleTime(startDate = LocalDate.of(2020, Month.MAY, 5),
+                        endDate = LocalDate.of(2020, Month.JUNE, 8)),
+                CycleTime(startDate = LocalDate.of(2020, Month.JUNE, 3),
+                        endDate = LocalDate.of(2020, Month.JUNE, 5))
+
         ).forEach {
             cycleTimeRepository.save(CycleTimeDocument.from(it)).subscribe()
         }

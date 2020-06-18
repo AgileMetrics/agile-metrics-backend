@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
 class AddWorkItemController(private val workItemService: WorkItemService) {
 
     @PostMapping("/work-item")
