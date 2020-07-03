@@ -1,0 +1,54 @@
+[
+  {
+    "name": "STRY0049846: Cambio de precio en Prestamo Bajo Demanda",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-02-07T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-02-10T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049848: Cambio de CPS e INE  para Precon y Préstamo bajo Demanda",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-02-11T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-03-02T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049996: Nuevo texto en el simulador de PBD V3.docx",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-02-21T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-02-26T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049857: Cambio PDF's Doc LEgales Anticipo de Nómina",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-02-14T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-03-02T00:00:00"
+      }
+    ]
+  }
+]

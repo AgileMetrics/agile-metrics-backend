@@ -15,7 +15,7 @@ class CycleTimeScatterPlotController(
     @ResponseStatus(HttpStatus.OK)
     fun getCycleTimeScatterPlot(): Flux<CycleTimeScatterPlotOut> {
         return service
-                .getValues()
+                .findAll()
                 .map { CycleTimeScatterPlotOut.from(it) }
     }
 

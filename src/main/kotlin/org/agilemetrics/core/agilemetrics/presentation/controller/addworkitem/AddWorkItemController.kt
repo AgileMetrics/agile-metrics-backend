@@ -13,9 +13,9 @@ class AddWorkItemController(private val workItemService: WorkItemService) {
 
     @PostMapping("/work-item")
     @ResponseStatus(HttpStatus.CREATED)
-    fun save(@RequestBody workItem: Mono<AddWorkItemIn>): Mono<AddWorkItemOut> {
+    fun save(@RequestBody addWorkItemIn: Mono<AddWorkItemIn>): Mono<AddWorkItemOut> {
         return workItemService
-                .save(workItem.map { WorkItem.from(it) })
+                .save(addWorkItemIn.map { WorkItem.from(it) })
                 .map { AddWorkItemOut.from(it) }
     }
 

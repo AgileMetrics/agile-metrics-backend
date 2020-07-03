@@ -5,7 +5,8 @@ import org.agilemetrics.core.agilemetrics.business.domain.WorkItemTransition
 import java.time.LocalDateTime
 
 data class AddWorkItemIn(val name: String,
-                         val transitions: List<AddWorkItemTransition>)
+                         val transitions: List<AddWorkItemTransition>) {
+}
 
 data class AddWorkItemOut(val id: String,
                           val name: String,

@@ -6,10 +6,10 @@ import org.agilemetrics.core.agilemetrics.presentation.controller.addworkitem.Ad
 import org.agilemetrics.core.agilemetrics.presentation.controller.addworkitem.AddWorkItemTransition
 import java.time.LocalDateTime
 
-class WorkItem(val id: String?,
-               val name: String,
-               val created: LocalDateTime?,
-               val transitions: List<WorkItemTransition>) {
+data class WorkItem(val id: String?,
+                    val name: String,
+                    val created: LocalDateTime?,
+                    val transitions: List<WorkItemTransition>) {
 
     companion object {
         fun from(json: AddWorkItemIn) = WorkItem(
@@ -31,8 +31,8 @@ class WorkItem(val id: String?,
 
 }
 
-class WorkItemTransition(val column: String,
-                         val date: LocalDateTime) {
+data class WorkItemTransition(val column: String,
+                              val date: LocalDateTime) {
 
     companion object {
         fun from(json: AddWorkItemTransition) = WorkItemTransition(
@@ -44,6 +44,7 @@ class WorkItemTransition(val column: String,
                 column = document.column,
                 date = document.date
         )
+
     }
 }
 

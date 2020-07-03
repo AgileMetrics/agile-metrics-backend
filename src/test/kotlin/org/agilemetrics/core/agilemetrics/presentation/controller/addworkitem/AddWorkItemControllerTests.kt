@@ -1,6 +1,8 @@
 package org.agilemetrics.core.agilemetrics.presentation.controller.addworkitem
 
+import org.agilemetrics.core.agilemetrics.infrastructure.repository.workitem.WorkItemRepository
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -8,13 +10,21 @@ import org.springframework.boot.test.web.client.TestRestTemplate
 import java.time.LocalDateTime
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class AddWorkItemControllerTests(@Autowired val client: TestRestTemplate) {
+class AddWorkItemControllerTests(@Autowired val client: TestRestTemplate,
+                                 @Autowired val workItemRepository: WorkItemRepository) {
 
     companion object {
         const val WORK_ITEM_ENDPOINT = "/api/v1/work-item"
         const val WIP_LITERAL = "WIP"
-        const val DONE_LITERAL = "Done"
+        const val DONE_LITERAL = "DONE"
         const val WORK_ITEM_NAME = "Work Item A"
+    }
+
+    @BeforeEach
+    fun beforeEach() {
+        this.workItemRepository
+                .deleteAll()
+                .subscribe()
     }
 
     @Test
