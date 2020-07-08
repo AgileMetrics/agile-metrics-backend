@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono
 @CrossOrigin
 class AddWorkItemController(private val workItemService: WorkItemService) {
 
-    @PostMapping("/work-item")
+    @PostMapping("/work-items")
     @ResponseStatus(HttpStatus.CREATED)
     fun save(@RequestBody addWorkItemIn: Mono<AddWorkItemIn>): Mono<AddWorkItemOut> {
         return workItemService

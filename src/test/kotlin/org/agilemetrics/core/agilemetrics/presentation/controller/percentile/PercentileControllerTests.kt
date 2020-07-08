@@ -1,4 +1,4 @@
-package org.agilemetrics.core.agilemetrics.presentation.controller.cycletimescatterplot
+package org.agilemetrics.core.agilemetrics.presentation.controller.percentile
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
@@ -12,19 +12,16 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.core.ParameterizedTypeReference
-import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import java.io.File
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
+class PercentileControllerTests(@Autowired val client: TestRestTemplate,
                                 @Autowired val workItemRepository: WorkItemRepository) {
 
     companion object {
-        const val CYCLE_TIME_SCATTER_PLOT_ENDPOINT = "/api/v1/cycle-time-scatterplot"
+        const val PERCENTILE_ENDPOINT = "/api/v1/percentiles"
         const val WORK_ITEM_ENDPOINT = "/api/v1/work-items"
-        const val NUMBER_OF_CYCLETIMES_EXPECTED = 24
     }
 
     @BeforeEach
@@ -35,53 +32,17 @@ class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
     }
 
     @Test
-    fun when_getCycleTimesScatterPlot_then_returnCompleteCycleTimeScatterPlotList() {
+    fun when_getPercentiles_then_returnTheMostRelevantPercentiles() {
         // Given:
         populateDatabase()
 
         // When:
-        val result = client.exchange(CYCLE_TIME_SCATTER_PLOT_ENDPOINT,
-                HttpMethod.GET,
-                null,
-                typeRef<List<CycleTimeScatterPlotOut>>())
+        val result = client.getForEntity(PERCENTILE_ENDPOINT, PercentileOut::class.java)
+
 
         // Then:
         assertThat(result).isNotNull
         assertThat(result.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(result.body?.size).isEqualTo(NUMBER_OF_CYCLETIMES_EXPECTED)
-    }
-
-    @Test
-    fun when_getCycleTimesScatterPlot_then_returnCorrectCycleTimeInDays() {
-        // Given:
-        populateDatabase()
-
-        // When:
-        val result = client.exchange(CYCLE_TIME_SCATTER_PLOT_ENDPOINT,
-                HttpMethod.GET,
-                null,
-                typeRef<List<CycleTimeScatterPlotOut>>())
-
-        // Then:
-        val firstCycleTimeResult: CycleTimeScatterPlotOut? = result.body?.get(0)
-        assertThat(firstCycleTimeResult?.cycleTimeInDays).isEqualTo(4)
-    }
-
-    @Test
-    fun when_getCycleTimesScatterPlot_then_returnEmptyList() {
-        // Given:
-        // Empty Database
-
-        // When:
-        val result = client.exchange(CYCLE_TIME_SCATTER_PLOT_ENDPOINT,
-                HttpMethod.GET,
-                null,
-                typeRef<List<CycleTimeScatterPlotOut>>())
-
-        // Then:
-        assertThat(result).isNotNull
-        assertThat(result.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(result.body?.size).isEqualTo(0)
     }
 
     private fun populateDatabase() {
@@ -98,7 +59,5 @@ class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
                     AddWorkItemOut::class.java)
         }
     }
-
-    private inline fun <reified T> typeRef() = object : ParameterizedTypeReference<T>() {}
 
 }

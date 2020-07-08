@@ -50,5 +50,265 @@
         "date": "2020-03-02T00:00:00"
       }
     ]
+  },
+  {
+    "name": "STRY0050440:Cambio formularios de apertura de préstamos en canales digitales",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-03-16T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-03-30T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050441 Cambios de formularios de orden realizada en oficinas",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-03-19T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-03-31T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050779: Test A B C_ Personalizar la oferta en el texto del simulador de Precon",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-04-02T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-04-13T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050780: Cambio rangos de riesgo",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-04-01T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-04-13T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049877: Incluir checkbox en compra aplazada",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-03-03T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-04T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051324-BUG Tras la contratación de AN no se envía por correo",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-04-28T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-05T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051202] _BUG [PRECON][PBD][CPS] - No aparece campo 3. Titulares en el tríptico (INE-AP-CPS)",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-04-22T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-05T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051201.BUG [PRECON][PBD][CPS] - Campo 3. Titular del Contrato del Préstamo",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-04-21T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-05T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049879: Incluir checkbox en contratación préstamo BD",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-03-23T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-08T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049878: Incluir checkbox en contratación precon",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-03-18T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-08T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0049880: Incluir checkbox en anticipo de nómina",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-04-02T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-19T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051604 Campaña Black Mayo – Junio 2020. Incluir texto en el simulador de Precon",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-05-13T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-28T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051301_Cambiar texto pie legal Simulador de Préstamos Bajo Demanda",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-05-11T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-05-28T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051957 eliminar llamada a SIDE en llamada 2",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-05-28T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050545_ Mostrar texto consentimiento para aceptación de Bureaux para Precon 1 y 2 titulares en canales digitales",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-05-05T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-08T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051999 Incluir nuevo valor ZZZ para el fichero que se recibe de CIRBE",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-03T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-05T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051820_ Mostrar texto consentimiento para aceptación de Bureaux para Precon 1 y 2 titulares en oficinas",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-08T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-18T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0051853_ Mostrar texto consentimiento para aceptación de Bureaux para Precon 1 titular TWIN CENTER",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-08T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-18T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0052431 No permitir cambio de teléfono en la solicitud de préstamos",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-18T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-24T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0052511_Campaña julio 2020. Incluir texto en el simulador de Precon",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-25T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-06-26T00:00:00"
+      }
+    ]
   }
 ]

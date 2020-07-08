@@ -14,7 +14,7 @@ class AddWorkItemControllerTests(@Autowired val client: TestRestTemplate,
                                  @Autowired val workItemRepository: WorkItemRepository) {
 
     companion object {
-        const val WORK_ITEM_ENDPOINT = "/api/v1/work-item"
+        const val WORK_ITEM_ENDPOINT = "/api/v1/work-items"
         const val WIP_LITERAL = "WIP"
         const val DONE_LITERAL = "DONE"
         const val WORK_ITEM_NAME = "Work Item A"

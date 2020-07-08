@@ -4,6 +4,7 @@ import org.agilemetrics.core.agilemetrics.business.domain.WorkItem
 import org.agilemetrics.core.agilemetrics.infrastructure.repository.workitem.WorkItemDocument
 import org.agilemetrics.core.agilemetrics.infrastructure.repository.workitem.WorkItemRepository
 import org.springframework.stereotype.Service
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Service
@@ -15,6 +16,12 @@ class WorkItemService(
                 .insert(workItem.map { WorkItemDocument.from(it) })
                 .next()
                 .map { WorkItem.from(it) }
+    }
+
+    fun bulk(workItems: Flux<WorkItem>) {
+        workItemRepository
+                .saveAll(workItems.map { WorkItemDocument.from(it) })
+                .subscribe()
     }
 
 }
