@@ -13,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.core.ParameterizedTypeReference
+import org.springframework.core.io.ClassPathResource
+import org.springframework.core.io.Resource
 import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
-import java.io.File
+
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
@@ -24,7 +26,7 @@ class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
     companion object {
         const val CYCLE_TIME_SCATTER_PLOT_ENDPOINT = "/api/v1/cycle-time-scatterplot"
         const val WORK_ITEM_ENDPOINT = "/api/v1/work-items"
-        const val NUMBER_OF_CYCLETIMES_EXPECTED = 24
+        const val NUMBER_OF_CYCLETIMES_EXPECTED = 27
     }
 
     @BeforeEach
@@ -89,7 +91,10 @@ class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
                 .registerModule(KotlinModule())
                 .registerModule(JavaTimeModule())
 
-        val workItems: List<AddWorkItemIn> = mapper.readValue(File(javaClass.classLoader.getResource("work-items.json").file),
+        val resource: Resource = ClassPathResource("work-items.json")
+
+        val workItems: List<AddWorkItemIn> = mapper.readValue(
+                resource.file,
                 Array<AddWorkItemIn>::class.java).toList()
 
         workItems.forEach {

@@ -24,4 +24,10 @@ class WorkItemService(
                 .subscribe()
     }
 
+    fun drop() {
+        workItemRepository
+                .deleteAll()
+                .subscribe()
+    }
+
 }

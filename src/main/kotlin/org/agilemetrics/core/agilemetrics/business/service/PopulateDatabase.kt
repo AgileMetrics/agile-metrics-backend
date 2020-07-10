@@ -5,9 +5,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.agilemetrics.core.agilemetrics.business.domain.WorkItem
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
+import org.springframework.core.io.ClassPathResource
+import org.springframework.core.io.Resource
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux
-import java.io.File
 import javax.annotation.PostConstruct
 
 @Component
@@ -25,10 +26,15 @@ class PopulateDatabase(
                 .registerModule(KotlinModule())
                 .registerModule(JavaTimeModule())
 
+        val resource: Resource = ClassPathResource("data/work-items.json")
+
         val workItems: List<WorkItem> = mapper.readValue(
-                File(javaClass.classLoader.getResource("work-items.json").file),
+                resource.inputStream,
                 Array<WorkItem>::class.java)
                 .toList()
+
+        this.workItemService
+                .drop()
 
         this.workItemService
                 .bulk(Flux.fromIterable(workItems))

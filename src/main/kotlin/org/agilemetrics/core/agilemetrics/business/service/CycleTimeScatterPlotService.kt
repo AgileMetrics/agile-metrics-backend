@@ -26,6 +26,7 @@ class CycleTimeScatterPlotService(
                 .findAll()
                 .map { WorkItem.from(it) }
                 .map { buildCycleTime(it) }
+                .sort { cycleTime1, cycleTime2 -> cycleTime1.completionDate.compareTo(cycleTime2.completionDate) }
     }
 
     private fun buildCycleTime(workItem: WorkItem): CycleTime {
