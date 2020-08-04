@@ -349,5 +349,57 @@
         "date": "2020-07-09T00:00:00"
       }
     ]
+  },
+  {
+    "name": "STRY0052513_Cambio pdf´s legales en PBD y Precon Jul2020",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-29T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-07-11T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050554_Guardar evidencia de información al cliente de la consulta a Bureaux para Precon de 1 y 2 titulares",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-06-10T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-07-20T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050464 Evidencia del consentimiento del cliente para PBD a la consulta de Bureaux para canales digitales",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-07-10T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-07-28T00:00:00"
+      }
+    ]
+  },
+  {
+    "name": "STRY0050547_ Guardar evidencia de información para PBD al cliente de la consulta a Bureaux para canales asistidos",
+    "transitions": [
+      {
+        "column": "WIP",
+        "date": "2020-07-07T00:00:00"
+      },
+      {
+        "column": "DONE",
+        "date": "2020-08-03T00:00:00"
+      }
+    ]
   }
 ]

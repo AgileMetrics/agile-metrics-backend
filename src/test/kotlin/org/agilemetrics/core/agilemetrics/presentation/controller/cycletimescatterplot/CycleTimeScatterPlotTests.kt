@@ -26,7 +26,7 @@ class CycleTimeScatterPlotTests(@Autowired val client: TestRestTemplate,
     companion object {
         const val CYCLE_TIME_SCATTER_PLOT_ENDPOINT = "/api/v1/cycle-time-scatterplot"
         const val WORK_ITEM_ENDPOINT = "/api/v1/work-items"
-        const val NUMBER_OF_CYCLETIMES_EXPECTED = 27
+        const val NUMBER_OF_CYCLETIMES_EXPECTED = 31
     }
 
     @BeforeEach

@@ -39,10 +39,14 @@ class PercentileControllerTests(@Autowired val client: TestRestTemplate,
         // When:
         val result = client.getForEntity(PERCENTILE_ENDPOINT, PercentileOut::class.java)
 
-
         // Then:
         assertThat(result).isNotNull
         assertThat(result.statusCode).isEqualTo(HttpStatus.OK)
+        assertThat(result.body).isNotNull
+        assertThat(result.body?.percentile50InDays).isEqualTo(13)
+        assertThat(result.body?.percentile70InDays).isEqualTo(18)
+        assertThat(result.body?.percentile85InDays).isEqualTo(41)
+        assertThat(result.body?.percentile95InDays).isEqualTo(52)
     }
 
     private fun populateDatabase() {
