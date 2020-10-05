@@ -8,6 +8,12 @@ spring:
 server:
   port: 8080
 
+agile-metrics:
+  azure-project:
+    base-url: https://dev.azure.com/Actionable-Agile-Metrics
+    username: test-api-readonly
+    password: ryt2h45vr5huolv6sqfnf2y3ctei3o6ng4qwcb2bkbkayfzxtgla
+
 ---
 spring:
   profiles: test
