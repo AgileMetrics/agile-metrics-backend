@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "Agile Metrics Backend"
+  data:
+    mongodb:
+      uri: mongodb://mongo-user:secret@localhost:27017/agile-metrics?authSource=admin
+
+server:
+  port: 8080
+
+agile-metrics:
+  azure-project:
+    base-url: http://localhost:${wiremock.server.port:8080}/Actionable-Agile-Metrics
+    username: test-api-readonly
+    password: ryt2h45vr5huolv6sqfnf2y3ctei3o6ng4qwcb2bkbkayfzxtgla

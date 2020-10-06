@@ -13,11 +13,11 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 @Service
-class AzureAdapter(val azureInvoker: AzureInvoker, val azureWorkItemMapper: AzureWorkItemMapper) {
+class AzureAdapter(private val azureInvoker: AzureInvoker, private val azureWorkItemMapper: AzureWorkItemMapper) {
 
     fun retrieveAzureWorkItems(): Mono<List<WorkItem>> {
         //Get azure work item id's of the current iteration
-        val currentWorkItemIterationIds: Mono<List<Int>> = azureInvoker.getCurrentIterationId()
+        val currentWorkItemIterationIds: Mono<List<Long>> = azureInvoker.getCurrentIterationId()
                 .flatMap { iterationId -> azureInvoker.getWorkItemIdsByIterationId(iterationId) }
 
         //Get general information about each work item
@@ -35,13 +35,13 @@ class AzureAdapter(val azureInvoker: AzureInvoker, val azureWorkItemMapper: Azur
 
     }
 
-    private fun getAzureWorkItemUpdateInformation(ids: List<Int>): Flux<AzureWorkItemUpdateInformationDto> {
+    private fun getAzureWorkItemUpdateInformation(ids: List<Long>): Flux<AzureWorkItemUpdateInformationDto> {
         return Flux.merge(ids.map { id -> azureInvoker.getWorkItemUpdateInformation(id) })
     }
 
     private fun getWorkItems(azureWorkItems: List<AzureWorkItem>, azureWorkItemUpdateInformationDtos: List<AzureWorkItemUpdateInformationDto>): List<WorkItem> {
-        val azureAzureWorkItemMap: HashMap<Long, AzureWorkItem> = AzureWorkItem.toHashMap(azureWorkItems)
-        val azureWorkItemUpdateInformationDtoMap: HashMap<Long, AzureWorkItemUpdateInformationDto> = AzureWorkItemUpdateInformationDto.toHashMap(azureWorkItemUpdateInformationDtos)
+        val azureAzureWorkItemMap: HashMap<Long, AzureWorkItem> = AzureWorkItem.listToHashMap(azureWorkItems)
+        val azureWorkItemUpdateInformationDtoMap: HashMap<Long, AzureWorkItemUpdateInformationDto> = AzureWorkItemUpdateInformationDto.listToHashMap(azureWorkItemUpdateInformationDtos)
 
         if (azureAzureWorkItemMap.keys != azureWorkItemUpdateInformationDtoMap.keys) {
             throw AzureException("Error preparing work item information from azure, keys are not the same")

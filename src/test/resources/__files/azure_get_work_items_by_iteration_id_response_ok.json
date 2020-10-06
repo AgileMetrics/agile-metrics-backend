@@ -1,0 +1,35 @@
+{
+    "workItemRelations": [
+        {
+            "rel": null,
+            "source": null,
+            "target": {
+                "id": 1,
+                "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/1"
+            }
+        },
+        {
+            "rel": null,
+            "source": null,
+            "target": {
+                "id": 2,
+                "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/2"
+            }
+        }
+    ],
+    "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/d9faf365-485b-4671-bae7-7d065193d3b4/_apis/work/teamsettings/iterations/d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75/workitems",
+    "_links": {
+        "self": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/d9faf365-485b-4671-bae7-7d065193d3b4/_apis/work/teamsettings/iterations/d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75/workitems"
+        },
+        "project": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/projects/afeee19d-8d90-4249-9563-e3affd933c68"
+        },
+        "team": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/projects/afeee19d-8d90-4249-9563-e3affd933c68/teams/d9faf365-485b-4671-bae7-7d065193d3b4"
+        },
+        "teamIteration": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/d9faf365-485b-4671-bae7-7d065193d3b4/_apis/work/teamsettings/iterations/d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75"
+        }
+    }
+}
