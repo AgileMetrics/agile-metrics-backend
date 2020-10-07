@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/Actionable-Agile-Metrics/_apis/wit/workitemsbatch?api-version=6.0",
+    "headers": {
+      "Accept": {
+        "contains": "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "equalToJson" : {"ids":[1,2],"fields":["System.WorkItemType","System.State","System.Title","System.CreatedDate"]}
+    }]
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "azure_get_work_items_batch_information_response_ok.json",
+    "headers": {
+      "Content-Type": "application/json",
+      "charset": "UTF-8",
+      "Cache-Control": "no-cache"
+    }
+  }
+}
+
+

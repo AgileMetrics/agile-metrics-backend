@@ -1,0 +1,27 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 1,
+      "rev": 4,
+      "fields": {
+        "System.WorkItemType": "Issue",
+        "System.State": "Doing",
+        "System.CreatedDate": "2020-06-08T06:41:28.61Z",
+        "System.Title": "PoC Montecarlo"
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/1"
+    },
+    {
+      "id": 2,
+      "rev": 5,
+      "fields": {
+        "System.WorkItemType": "Issue",
+        "System.State": "Done",
+        "System.CreatedDate": "2020-06-08T06:41:42.823Z",
+        "System.Title": "Persistencia en MongoDB"
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/2"
+    }
+  ]
+}

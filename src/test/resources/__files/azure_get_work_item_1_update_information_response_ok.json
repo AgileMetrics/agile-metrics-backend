@@ -1,0 +1,349 @@
+{
+  "count": 4,
+  "value": [
+    {
+      "id": 1,
+      "workItemId": 1,
+      "rev": 1,
+      "revisedBy": {
+        "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
+        "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+        "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+        "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+        "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+      },
+      "revisedDate": "2020-06-08T06:41:31.087Z",
+      "fields": {
+        "System.Id": {
+          "newValue": 1
+        },
+        "System.AreaId": {
+          "newValue": 2
+        },
+        "System.NodeName": {
+          "newValue": "Actionable Agile Metrics"
+        },
+        "System.AreaLevel1": {
+          "newValue": "Actionable Agile Metrics"
+        },
+        "System.Rev": {
+          "newValue": 1
+        },
+        "System.AuthorizedDate": {
+          "newValue": "2020-06-08T06:41:28.61Z"
+        },
+        "System.RevisedDate": {
+          "newValue": "2020-06-08T06:41:31.087Z"
+        },
+        "System.IterationId": {
+          "newValue": 3
+        },
+        "System.IterationLevel1": {
+          "newValue": "Actionable Agile Metrics"
+        },
+        "System.IterationLevel2": {
+          "newValue": "Sprint 1"
+        },
+        "System.WorkItemType": {
+          "newValue": "Issue"
+        },
+        "System.State": {
+          "newValue": "To Do"
+        },
+        "System.Reason": {
+          "newValue": "Added to backlog"
+        },
+        "System.AssignedTo": {},
+        "System.CreatedDate": {
+          "newValue": "2020-06-08T06:41:28.61Z"
+        },
+        "System.CreatedBy": {
+          "newValue": {
+            "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "_links": {
+              "avatar": {
+                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+              }
+            },
+            "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+            "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "System.ChangedDate": {
+          "newValue": "2020-06-08T06:41:28.61Z"
+        },
+        "System.ChangedBy": {
+          "newValue": {
+            "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "_links": {
+              "avatar": {
+                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+              }
+            },
+            "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+            "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "System.AuthorizedAs": {
+          "newValue": {
+            "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "_links": {
+              "avatar": {
+                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+              }
+            },
+            "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+            "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "System.PersonId": {
+          "newValue": 121908370
+        },
+        "System.Watermark": {
+          "newValue": 1
+        },
+        "System.IsDeleted": {
+          "newValue": false
+        },
+        "System.CommentCount": {
+          "newValue": 0
+        },
+        "System.TeamProject": {
+          "newValue": "Actionable Agile Metrics"
+        },
+        "System.AreaPath": {
+          "newValue": "Actionable Agile Metrics"
+        },
+        "System.IterationPath": {
+          "newValue": "Actionable Agile Metrics\\Sprint 1"
+        },
+        "System.Title": {
+          "newValue": "PoC Montecarlo"
+        },
+        "System.BoardColumnDone": {
+          "newValue": false
+        },
+        "Microsoft.VSTS.Common.Priority": {
+          "newValue": 2
+        },
+        "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_System.ExtensionMarker": {
+          "newValue": true
+        },
+        "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_Kanban.Column.Done": {
+          "newValue": false
+        },
+        "System.BoardColumn": {
+          "newValue": "To Do"
+        },
+        "Microsoft.VSTS.Common.StateChangeDate": {
+          "newValue": "2020-06-08T06:41:28.61Z"
+        },
+        "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_Kanban.Column": {
+          "newValue": "To Do"
+        }
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/1"
+    },
+    {
+      "id": 2,
+      "workItemId": 1,
+      "rev": 2,
+      "revisedBy": {
+        "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
+        "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+        "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+        "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+        "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+      },
+      "revisedDate": "2020-06-08T06:41:45.703Z",
+      "fields": {
+        "System.Rev": {
+          "oldValue": 1,
+          "newValue": 2
+        },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-06-08T06:41:28.61Z",
+          "newValue": "2020-06-08T06:41:31.087Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-06-08T06:41:31.087Z",
+          "newValue": "2020-06-08T06:41:45.703Z"
+        },
+        "System.State": {
+          "oldValue": "To Do",
+          "newValue": "Doing"
+        },
+        "System.Reason": {
+          "oldValue": "Added to backlog",
+          "newValue": "Started"
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-06-08T06:41:28.61Z",
+          "newValue": "2020-06-08T06:41:31.087Z"
+        },
+        "System.Watermark": {
+          "oldValue": 1,
+          "newValue": 2
+        },
+        "System.BoardColumn": {
+          "oldValue": "To Do",
+          "newValue": "Doing"
+        },
+        "Microsoft.VSTS.Common.StateChangeDate": {
+          "oldValue": "2020-06-08T06:41:28.61Z",
+          "newValue": "2020-06-08T06:41:31.087Z"
+        },
+        "Microsoft.VSTS.Common.ActivatedDate": {
+          "newValue": "2020-06-08T06:41:31.087Z"
+        },
+        "Microsoft.VSTS.Common.ActivatedBy": {
+          "newValue": {
+            "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "_links": {
+              "avatar": {
+                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+              }
+            },
+            "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+            "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_Kanban.Column": {
+          "oldValue": "To Do",
+          "newValue": "Doing"
+        }
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/2"
+    },
+    {
+      "id": 3,
+      "workItemId": 1,
+      "rev": 3,
+      "revisedBy": {
+        "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
+        "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+        "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+        "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+        "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+      },
+      "revisedDate": "2020-06-08T06:42:21.033Z",
+      "fields": {
+        "System.Rev": {
+          "oldValue": 2,
+          "newValue": 3
+        },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-06-08T06:41:31.087Z",
+          "newValue": "2020-06-08T06:41:45.703Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-06-08T06:41:45.703Z",
+          "newValue": "2020-06-08T06:42:21.033Z"
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-06-08T06:41:31.087Z",
+          "newValue": "2020-06-08T06:41:45.703Z"
+        },
+        "System.Watermark": {
+          "oldValue": 2,
+          "newValue": 5
+        },
+        "Microsoft.VSTS.Common.StackRank": {
+          "newValue": 666666666.0
+        }
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/3"
+    },
+    {
+      "id": 4,
+      "workItemId": 1,
+      "rev": 4,
+      "revisedBy": {
+        "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
+        "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+        "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+        "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+        "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+      },
+      "revisedDate": "9999-01-01T00:00:00Z",
+      "fields": {
+        "System.Rev": {
+          "oldValue": 3,
+          "newValue": 4
+        },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-06-08T06:41:45.703Z",
+          "newValue": "2020-06-08T06:42:21.033Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-06-08T06:42:21.033Z",
+          "newValue": "9999-01-01T00:00:00Z"
+        },
+        "System.AssignedTo": {
+          "newValue": {
+            "displayName": "Garzon Sanchez, D. (Daniel)",
+            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/10072bf1-1af1-6b79-89ae-c439badf64bf",
+            "_links": {
+              "avatar": {
+                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.MTAwNzJiZjEtMWFmMS03Yjc5LTg5YWUtYzQzOWJhZGY2NGJm"
+              }
+            },
+            "id": "10072bf1-1af1-6b79-89ae-c439badf64bf",
+            "uniqueName": "daniel.garzon.sanchez@ing.com",
+            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.MTAwNzJiZjEtMWFmMS03Yjc5LTg5YWUtYzQzOWJhZGY2NGJm",
+            "descriptor": "aad.MTAwNzJiZjEtMWFmMS03Yjc5LTg5YWUtYzQzOWJhZGY2NGJm"
+          }
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-06-08T06:41:45.703Z",
+          "newValue": "2020-06-08T06:42:21.033Z"
+        },
+        "System.Watermark": {
+          "oldValue": 5,
+          "newValue": 6
+        }
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/4"
+    }
+  ]
+}
