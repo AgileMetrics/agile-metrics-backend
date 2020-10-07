@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: agilemetricsbackend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agilemetricsbackend
+  template:
+    metadata:
+      labels:
+        app: agilemetricsbackend 
+    spec:
+      containers:
+        - name: agilemetricsbackend 
+          image: agilemetricsregistry.azurecr.io/agilemetricsbackend
+          ports:
+          - containerPort: 8080
