@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
@@ -42,6 +43,12 @@ internal class AzureAdapterTest {
     }
 
     @Test
+    @DisplayName(" Given an azureAdapter "
+            + " When invoke to retrieveWorkItemFromCurrentIteration "
+            + " Then get current iteration id "
+            + " And get work item ids of this iteration "
+            + " And get AzureWorkItems using these id's "
+            + " And those AzureWorkItems are returned")
     fun shouldRetrieveWorkItemFromCurrentIteration() {
         val workItemIds = Mono.just(listOf(2L))
         val expectedIterationId:String = "d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75"
@@ -57,6 +64,11 @@ internal class AzureAdapterTest {
     }
 
     @Test
+    @DisplayName(" Given an azureAdapter "
+            + " When invoke to retrieveAllWorkItemsWithDoneStatus "
+            + " Then get work item ids executing a query to get all done items id's "
+            + " And get AzureWorkItems using these id's "
+            + " And those AzureWorkItems are returned")
     fun shouldRetrieveAllWorkItemsWithDoneStatus() {
         val workItemIds = Mono.just(listOf(2L))
 

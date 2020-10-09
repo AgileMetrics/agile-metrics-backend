@@ -38,6 +38,7 @@ class PopulateDatabase(
 
         this.workItemService
                 .bulk(Flux.fromIterable(workItems))
+                .subscribe()
     }
 
 }

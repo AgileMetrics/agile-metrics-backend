@@ -8,6 +8,7 @@ import org.agilemetrics.core.agilemetrics.infrastructure.azure.model.AzureWorkIt
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
@@ -21,6 +22,10 @@ import java.time.format.DateTimeFormatter
 
 @ExtendWith(MockitoExtension::class)
 internal class AzureWorkItemServiceTest {
+    companion object {
+        const val AZURE_WORK_ITEM_1_NAME = "Persistencia en MongoDB"
+        const val AZURE_WORK_ITEM_2_NAME = "Calcular percentile (SLAs)"
+    }
 
     @Mock
     private lateinit var  azureApiService: AzureApiService
@@ -35,6 +40,11 @@ internal class AzureWorkItemServiceTest {
         azureWorkItemService = AzureWorkItemService(azureApiService,azureWorkItemMapper)
     }
     @Test
+    @DisplayName(" Given a list of workItem id's "
+            + " When invoke to retrieveAzureWorkItems "
+            + " Then get work item information "
+            + " And get update item information "
+            + " And return a list of AzureWorkItem using the previous Information")
     fun shouldTestRetrieveAzureWorkItems() {
         // Given
         val ids: Mono<List<Long>> =Mono.just(listOf(2L,7L))
@@ -49,15 +59,23 @@ internal class AzureWorkItemServiceTest {
         // Then
         StepVerifier
                 .create(azureWorkItemService.retrieveAzureWorkItems(ids))
-                .assertNext { assertWorkItem1(it) }
-                .assertNext { assertWorkItem2(it) }
+                .assertNext { assertWorkItem(it) }
+                .assertNext { assertWorkItem(it) }
                 .expectComplete()
                 .verify()
     }
 
+    private fun assertWorkItem(item: AzureWorkItem){
+        if(item.name == AZURE_WORK_ITEM_1_NAME){
+            assertWorkItem1(item)
+        }else{
+            assertWorkItem2(item)
+        }
+    }
+
     private fun assertWorkItem1(item: AzureWorkItem) {
         assertNull(item.id)
-        assertEquals("Persistencia en MongoDB", item.name)
+        assertEquals(AZURE_WORK_ITEM_1_NAME, item.name)
         assertEquals(parseDate("2020-06-08T06:41:42.823Z"), item.created)
         assertEquals(3, item.transitions.size)
         assertEquals(parseDate("2020-06-08T06:41:42.823Z"), item.transitions[0].date)
@@ -70,7 +88,8 @@ internal class AzureWorkItemServiceTest {
 
     private fun assertWorkItem2(item: AzureWorkItem) {
         assertNull(item.id)
-        assertEquals("Calcular percentile (SLAs)", item.name)
+
+        assertEquals(AZURE_WORK_ITEM_2_NAME, item.name)
         assertEquals(parseDate("2020-06-08T06:44:55.387Z"), item.created)
         assertEquals(3, item.transitions.size)
         assertEquals(parseDate("2020-06-08T06:44:55.387Z"), item.transitions[0].date)

@@ -18,10 +18,9 @@ class WorkItemService(
                 .map { WorkItem.from(it) }
     }
 
-    fun bulk(workItems: Flux<WorkItem>) {
-        workItemRepository
-                .saveAll(workItems.map { WorkItemDocument.from(it) })
-                .subscribe()
+    fun bulk(workItems: Flux<WorkItem>): Mono<Void> {
+        return workItemRepository.saveAll(workItems.map { WorkItemDocument.from(it) })
+                .then()
     }
 
     fun drop() {

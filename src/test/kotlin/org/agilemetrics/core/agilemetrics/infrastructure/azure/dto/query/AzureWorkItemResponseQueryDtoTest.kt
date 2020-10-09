@@ -2,10 +2,15 @@ package org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.query
 
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.AzureWorkItemTarget
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 internal class AzureWorkItemResponseQueryDtoTest {
+
     @Test
+    @DisplayName( " Given a AzureWorkItemResponseQueryDto object "
+            + " When invoke to getWorkItemIds "
+            + " Then a list with the work items is returned ")
     fun shouldTestGetWorkItemIds() {
         // Given
         val azureWorkItemResponseQueryDto: AzureWorkItemResponseQueryDto = createAzureWorkItemResponseQueryDto()

@@ -2,6 +2,7 @@ package org.agilemetrics.core.agilemetrics.infrastructure.azure.services
 
 import org.agilemetrics.core.agilemetrics.AgileMetricsApplication
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,8 +26,10 @@ internal class AzureApiServiceTest {
     private val workItemId2: Long = 2
 
     @Test
+    @DisplayName(" Given an azureApiService object "
+            + " When invoke to getCurrentIterationId "
+            + " Then call to azure endpoint and return the iterationId ")
     fun shouldTestGetCurrentIterationId() {
-
         StepVerifier
                 .create(azureApiService.getCurrentIterationId())
                 .expectNext(expectedIterationId)
@@ -35,6 +38,9 @@ internal class AzureApiServiceTest {
     }
 
     @Test
+    @DisplayName(" Given an expectedIterationId object "
+            + " When invoke to getWorkItemIdsByIterationId "
+            + " Then call to azure endpoint and return the workItem Ids of that iteration ")
     fun shouldTestGetWorkItemIdsByIterationId() {
 
         StepVerifier
@@ -45,6 +51,9 @@ internal class AzureApiServiceTest {
     }
 
     @Test
+    @DisplayName(" Given a list of workItem id's "
+            + " When invoke to getWorkItemsBatchInformation "
+            + " Then call to azure endpoint and return the general information of these workItems ")
     fun shouldTestGetWorkItemsBatchInformation() {
         StepVerifier
                 .create(azureApiService.getWorkItemsBatchInformation(expectedWorkItemIds))
@@ -60,6 +69,9 @@ internal class AzureApiServiceTest {
     }
 
     @Test
+    @DisplayName(" Given a workItem id "
+            + " When invoke to getWorkItemUpdateInformation "
+            + " Then call to azure endpoint and return the update information of this workItem ")
     fun shouldTestGetWorkItemUpdateInformation() {
         StepVerifier
                 .create(azureApiService.getWorkItemUpdateInformation(workitemId = workItemId2))
@@ -75,6 +87,9 @@ internal class AzureApiServiceTest {
     }
 
     @Test
+    @DisplayName(" Given a workItem query "
+            + " When invoke to executeWorkItemQuery "
+            + " Then call to azure endpoint and return the list of workItems affected ")
     fun shouldTestExecuteWorkItemQuery() {
         StepVerifier
                 .create(azureApiService.executeWorkItemQuery("Select [System.Id] From WorkItems Where [System.State] = 'Done'"))

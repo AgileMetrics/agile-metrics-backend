@@ -7,11 +7,12 @@ import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.update.AzureW
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.exception.AzureException
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.model.AzureWorkItem
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import java.io.File
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.HashMap
+import java.util.*
 
 
 internal class AzureWorkItemMapperTest {
@@ -19,6 +20,10 @@ internal class AzureWorkItemMapperTest {
     private val objectMapper = jacksonObjectMapper()
 
     @Test
+    @DisplayName(" Given a AzureWorkItemBatchResponseDto object And azureWorkItemUpdateInformationDto object"
+            + " And the id of the azureWorkItem in azureWorkItemUpdateInformationDto is contained in AzureWorkItemBatchResponseDto"
+            + " When invoke to mapToAzureWorkItem "
+            + " Then a azureWorkItem is created getting information from both objects ")
     fun shouldMapToDomain() {
         // Given
         val azureWorkItemBatchResponseDto: AzureWorkItemBatchResponseDto = objectMapper.readValue(File("src/test/resources/__files/azure_post_work_items_batch_information_response_ok.json"), AzureWorkItemBatchResponseDto::class.java)
@@ -49,6 +54,10 @@ internal class AzureWorkItemMapperTest {
     }
 
     @Test
+    @DisplayName(" Given a AzureWorkItemBatchResponseDto object And azureWorkItemUpdateInformationDto object"
+            + " And the id of the azureWorkItem in azureWorkItemUpdateInformationDto is NOT contained in AzureWorkItemBatchResponseDto"
+            + " When invoke to mapToAzureWorkItem "
+            + " Then an exception is thrown because the objects are not related and not is able to build an AzureWorkItem ")
     fun shouldFailIfBatchNotContainTheItem() {
         // Given
         val azureWorkItemBatchResponseDto = AzureWorkItemBatchResponseDto(count = 0, value = listOf())

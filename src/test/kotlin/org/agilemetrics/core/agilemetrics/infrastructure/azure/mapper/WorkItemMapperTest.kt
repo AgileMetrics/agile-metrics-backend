@@ -3,6 +3,7 @@ package org.agilemetrics.core.agilemetrics.infrastructure.azure.mapper
 import org.agilemetrics.core.agilemetrics.business.domain.WorkItem
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.model.AzureWorkItem
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
 
@@ -10,6 +11,9 @@ internal class WorkItemMapperTest {
     private val workItemMapper: WorkItemMapper = WorkItemMapper()
 
     @Test
+    @DisplayName(" Given an AzureWorkItem "
+            + " When invoke to fromAzureWorkItem "
+            + " Then a WorkItem is created ")
     fun shouldTestFromAzureWorkItem() {
         // Given
         val azureWorkItem: AzureWorkItem = createAzureWorkItem()
