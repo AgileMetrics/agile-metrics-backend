@@ -54,7 +54,7 @@ internal class AzureWorkItemMapperTest {
     }
 
     @Test
-    @DisplayName(" Given a AzureWorkItemBatchResponseDto object And azureWorkItemUpdateInformationDto object"
+    @DisplayName(" Given an AzureWorkItemBatchResponseDto object And azureWorkItemUpdateInformationDto object"
             + " And the id of the azureWorkItem in azureWorkItemUpdateInformationDto is NOT contained in AzureWorkItemBatchResponseDto"
             + " When invoke to mapToAzureWorkItem "
             + " Then an exception is thrown because the objects are not related and not is able to build an AzureWorkItem ")

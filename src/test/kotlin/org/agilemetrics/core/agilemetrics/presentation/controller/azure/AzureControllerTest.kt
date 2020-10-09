@@ -41,7 +41,7 @@ internal class AzureControllerTest {
             + " When invoke to fillWorkItemsFromAzure "
             + " Then return workItems getting the content from Azure "
             + " And save in the database these work items ")
-    
+
     fun shouldTestFillWorkItemsFromAzure() {
         // When
         azureController.fillWorkItemsFromAzure().block();

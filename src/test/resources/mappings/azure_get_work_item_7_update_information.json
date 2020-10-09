@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates",
+    "url": "/Actionable-Agile-Metrics/Actionable%20Agile%20Metrics/_apis/wit/workItems/7/updates",
     "headers": {
       "Accept": {
         "contains": "application/json"

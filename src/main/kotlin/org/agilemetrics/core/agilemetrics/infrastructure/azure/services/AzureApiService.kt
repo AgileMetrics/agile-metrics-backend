@@ -8,7 +8,9 @@ import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.query.AzureWo
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.query.AzureWorkItemResponseQueryDto
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.update.AzureWorkItemUpdateInformationDto
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.exception.AzureException
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.model.AzureApiContext
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.BodyInserters
@@ -16,15 +18,17 @@ import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Mono
 
 @Service
-class AzureApiService(@Qualifier("azureWebClient") val webClient: WebClient) {
-
+class AzureApiService(@Qualifier("azureWebClient") private val webClient: WebClient,
+                      private val azureApiContext: AzureApiContext) {
     /**
      * Get the current iteration Id
      * @return The internal Azure iteration ID
      */
     fun getCurrentIterationId(): Mono<String> {
+        azureApiContext.getUsername()
         return webClient.get()
-                .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/work/teamsettings/iterations?\$timeframe=current&api-version=6.0")
+                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/work/teamsettings/iterations?\$timeframe=current&api-version=6.0")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureIterationDto::class.java)
                 .map { getIterationId(it) }
@@ -37,7 +41,8 @@ class AzureApiService(@Qualifier("azureWebClient") val webClient: WebClient) {
      */
     fun getWorkItemIdsByIterationId(iterationId: String): Mono<List<Long>> {
         return webClient.get()
-                .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/work/teamsettings/iterations/$iterationId/workitems?api-version=6.0-preview.1")
+                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/work/teamsettings/iterations/$iterationId/workitems?api-version=6.0-preview.1")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureWorkItemRelationDto::class.java)
                 .map { it.getWorkItemIds() }
@@ -50,7 +55,8 @@ class AzureApiService(@Qualifier("azureWebClient") val webClient: WebClient) {
      */
     fun getWorkItemsBatchInformation(workItemIds: List<Long>): Mono<AzureWorkItemBatchResponseDto> {
         return webClient.post()
-                .uri("/_apis/wit/workitemsbatch?api-version=6.0")
+                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/wit/workitemsbatch?api-version=6.0")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(Mono.just(AzureWorkItemBatchRequestDto(workItemIds)), AzureWorkItemBatchRequestDto::class.java))
@@ -64,7 +70,8 @@ class AzureApiService(@Qualifier("azureWebClient") val webClient: WebClient) {
      */
     fun getWorkItemUpdateInformation(workitemId: Long): Mono<AzureWorkItemUpdateInformationDto> {
         return webClient.get()
-                .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/$workitemId/updates")
+                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/wit/workItems/$workitemId/updates")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureWorkItemUpdateInformationDto::class.java)
     }
@@ -76,13 +83,13 @@ class AzureApiService(@Qualifier("azureWebClient") val webClient: WebClient) {
      */
     fun executeWorkItemQuery(query: String): Mono<List<Long>> {
         return webClient.post()
-                .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/wiql?api-version=6.0")
+                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/wit/wiql?api-version=6.0")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(Mono.just(AzureWorkItemQueryRequestDto(query)), AzureWorkItemQueryRequestDto::class.java))
                 .retrieve().bodyToMono(AzureWorkItemResponseQueryDto::class.java)
                 .map { it.getWorkItemIds() }
-
     }
 
     private fun getIterationId(azureIterationDto: AzureIterationDto): String {
