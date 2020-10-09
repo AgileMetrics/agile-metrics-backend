@@ -1,57 +1,67 @@
 package org.agilemetrics.core.agilemetrics.infrastructure.azure.mapper
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import org.agilemetrics.core.agilemetrics.business.domain.WorkItem
-import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.AzureWorkItemDto
-import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.AzureWorkItemDto.AzureWorkItem
-import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.AzureWorkItemUpdateInformationDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.batch.AzureWorkItemBatchResponseDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.batch.AzureWorkItemBatchResponseDto.AzureWorkItemInformation
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.update.AzureWorkItemUpdateInformationDto
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.exception.AzureException
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.model.AzureWorkItem
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.io.File
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.HashMap
 
 
 internal class AzureWorkItemMapperTest {
-    private val azureWorkItemMapper:AzureWorkItemMapper = AzureWorkItemMapper()
-    private val mapper = jacksonObjectMapper()
+    private val azureWorkItemMapper: AzureWorkItemMapper = AzureWorkItemMapper()
+    private val objectMapper = jacksonObjectMapper()
 
     @Test
     fun shouldMapToDomain() {
         // Given
-        val azureWorkItemDto: AzureWorkItemDto = mapper.readValue(File("src/test/resources/__files/azure_get_work_items_batch_information_response_ok.json"), AzureWorkItemDto::class.java)
-        val azureWorkItemUpdateInformationDto: AzureWorkItemUpdateInformationDto = mapper.readValue(File("src/test/resources/__files/azure_get_work_item_1_update_information_response_ok.json"), AzureWorkItemUpdateInformationDto::class.java)
-        val azureWorkItem: AzureWorkItem =azureWorkItemDto.value[0]
+        val azureWorkItemBatchResponseDto: AzureWorkItemBatchResponseDto = objectMapper.readValue(File("src/test/resources/__files/azure_post_work_items_batch_information_response_ok.json"), AzureWorkItemBatchResponseDto::class.java)
+        val azureWorkItemUpdateInformationDto: AzureWorkItemUpdateInformationDto = objectMapper.readValue(File("src/test/resources/__files/azure_get_work_item_7_update_information_response_ok.json"), AzureWorkItemUpdateInformationDto::class.java)
+        val azureWorkItemInformationMap: HashMap<Long, AzureWorkItemInformation> = azureWorkItemBatchResponseDto.getAzureWorkItemInformationAsMap()
+        val workItemId: Long = azureWorkItemUpdateInformationDto.getWorkItemId()
 
         // When
-        val workItem: WorkItem =azureWorkItemMapper.mapToDomain(azureWorkItem,azureWorkItemUpdateInformationDto)
+        val azureWorkItem: AzureWorkItem = azureWorkItemMapper.mapToAzureWorkItem(azureWorkItemBatchResponseDto, azureWorkItemUpdateInformationDto)
 
         // Then
-        assertEquals(azureWorkItem.id, azureWorkItemUpdateInformationDto.value[0].workItemId)
-        assertNull(workItem.id)
-        assertEquals(azureWorkItem.fields.createdDate,workItem.created)
-        assertEquals(azureWorkItem.fields.title,workItem.name)
-        assertEquals(2,workItem.transitions.size)
-        assertEquals(azureWorkItemUpdateInformationDto.value[0].revisedDate,workItem.transitions[0].date)
-        assertEquals("To Do",workItem.transitions[0].column)
-        assertEquals(azureWorkItemUpdateInformationDto.value[1].revisedDate,workItem.transitions[1].date)
-        assertEquals("Doing",workItem.transitions[1].column)
+        assertNull(azureWorkItem.id)
+        assertEquals(azureWorkItemInformationMap[workItemId]!!.fields.createdDate, azureWorkItem.created)
+        assertEquals(azureWorkItemInformationMap[workItemId]!!.fields.title, azureWorkItem.name)
+        assertEquals(3, azureWorkItem.transitions.size)
 
+        assertEquals("To Do", azureWorkItemUpdateInformationDto.value[0].fields.boardColumn!!.newValue!!)
+        assertEquals("To Do", azureWorkItem.transitions[0].column)
+        assertEquals(parseDate(azureWorkItemUpdateInformationDto.value[0].fields.createdDate!!.newValue!!), azureWorkItem.transitions[0].date)
+
+        assertEquals("Doing", azureWorkItemUpdateInformationDto.value[3].fields.boardColumn!!.newValue!!)
+        assertEquals("Doing", azureWorkItem.transitions[1].column)
+        assertEquals(parseDate(azureWorkItemUpdateInformationDto.value[3].fields.changedDate!!.newValue!!), azureWorkItem.transitions[1].date)
+
+        assertEquals("Done", azureWorkItemUpdateInformationDto.value[5].fields.boardColumn!!.newValue!!)
+        assertEquals("Done", azureWorkItem.transitions[2].column)
+        assertEquals(parseDate(azureWorkItemUpdateInformationDto.value[5].fields.changedDate!!.newValue!!), azureWorkItem.transitions[2].date)
     }
 
     @Test
-    fun shouldNotMapToDomainIfWorkItemAndUpdateInformationBelongToDifferentItems() {
+    fun shouldFailIfBatchNotContainTheItem() {
         // Given
-        val azureWorkItemDto: AzureWorkItemDto = mapper.readValue(File("src/test/resources/__files/azure_get_work_items_batch_information_response_ok.json"), AzureWorkItemDto::class.java)
-        val azureWorkItemUpdateInformationDto: AzureWorkItemUpdateInformationDto = mapper.readValue(File("src/test/resources/__files/azure_get_work_item_1_update_information_response_ok.json"), AzureWorkItemUpdateInformationDto::class.java)
-        val azureWorkItem: AzureWorkItem =azureWorkItemDto.value[1]//This item is different to the informationDto
+        val azureWorkItemBatchResponseDto = AzureWorkItemBatchResponseDto(count = 0, value = listOf())
+        val azureWorkItemUpdateInformationDto: AzureWorkItemUpdateInformationDto = objectMapper.readValue(File("src/test/resources/__files/azure_get_work_item_7_update_information_response_ok.json"), AzureWorkItemUpdateInformationDto::class.java)
 
         // When
         //Then
         assertThrows(AzureException::class.java) {
-            assertNotEquals(azureWorkItem.id, azureWorkItemUpdateInformationDto.value[0].workItemId)
-            azureWorkItemMapper.mapToDomain(azureWorkItem,azureWorkItemUpdateInformationDto)
+            azureWorkItemMapper.mapToAzureWorkItem(azureWorkItemBatchResponseDto, azureWorkItemUpdateInformationDto)
         }
     }
 
-
+    private fun parseDate(dateAsString: String): LocalDateTime {
+        return LocalDateTime.parse(dateAsString, DateTimeFormatter.ISO_DATE_TIME)
+    }
 }

@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates",
+    "url": "/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates",
     "headers": {
       "Accept": {
         "contains": "application/json"
@@ -10,7 +10,7 @@
   },
   "response": {
     "status": 200,
-    "bodyFileName": "azure_get_work_item_1_update_information_response_ok.json",
+    "bodyFileName": "azure_get_work_item_7_update_information_response_ok.json",
     "headers": {
       "Content-Type": "application/json",
       "charset": "UTF-8",

@@ -1,6 +1,12 @@
 package org.agilemetrics.core.agilemetrics.infrastructure.azure.services
 
-import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.*
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.batch.AzureWorkItemBatchResponseDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.batch.AzureWorkItemBatchRequestDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.iteration.AzureIterationDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.iteration.AzureWorkItemRelationDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.query.AzureWorkItemQueryRequestDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.query.AzureWorkItemResponseQueryDto
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.dto.update.AzureWorkItemUpdateInformationDto
 import org.agilemetrics.core.agilemetrics.infrastructure.azure.exception.AzureException
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.http.MediaType
@@ -8,10 +14,9 @@ import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.BodyInserters
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Mono
-import java.util.stream.Collectors
 
 @Service
-class AzureInvoker(@Qualifier("azureWebClient") val webClient: WebClient) {
+class AzureApiService(@Qualifier("azureWebClient") val webClient: WebClient) {
 
     /**
      * Get the current iteration Id
@@ -22,7 +27,7 @@ class AzureInvoker(@Qualifier("azureWebClient") val webClient: WebClient) {
                 .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/work/teamsettings/iterations?\$timeframe=current&api-version=6.0")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureIterationDto::class.java)
-                .map { azureIterationDto -> getIterationId(azureIterationDto) }
+                .map { getIterationId(it) }
     }
 
     /**
@@ -35,7 +40,7 @@ class AzureInvoker(@Qualifier("azureWebClient") val webClient: WebClient) {
                 .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/work/teamsettings/iterations/$iterationId/workitems?api-version=6.0-preview.1")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureWorkItemRelationDto::class.java)
-                .map { azureWorkItemRelation -> getWorkItemIds(azureWorkItemRelation) }
+                .map { it.getWorkItemIds() }
     }
 
     /**
@@ -43,14 +48,13 @@ class AzureInvoker(@Qualifier("azureWebClient") val webClient: WebClient) {
      * @param workItemIds List of internal Azure work items Id's
      * @return A Dto with an internal list with information about each work item
      */
-    fun getWorkItemsBatchInformation(workItemIds: List<Long>): Mono<List<AzureWorkItemDto.AzureWorkItem>> {
+    fun getWorkItemsBatchInformation(workItemIds: List<Long>): Mono<AzureWorkItemBatchResponseDto> {
         return webClient.post()
                 .uri("/_apis/wit/workitemsbatch?api-version=6.0")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(Mono.just(AzureWorkItemBatchRequestDto(workItemIds)), AzureWorkItemBatchRequestDto::class.java))
-                .retrieve().bodyToMono(AzureWorkItemDto::class.java)
-                .map {item -> item.value}
+                .retrieve().bodyToMono(AzureWorkItemBatchResponseDto::class.java)
     }
 
     /**
@@ -65,6 +69,21 @@ class AzureInvoker(@Qualifier("azureWebClient") val webClient: WebClient) {
                 .retrieve().bodyToMono(AzureWorkItemUpdateInformationDto::class.java)
     }
 
+    /**
+     * This method execute a query and return the work items affected by the query )
+     * @param query the wiql query
+     * @return A List of work items id
+     */
+    fun executeWorkItemQuery(query: String): Mono<List<Long>> {
+        return webClient.post()
+                .uri("/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/wiql?api-version=6.0")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromPublisher(Mono.just(AzureWorkItemQueryRequestDto(query)), AzureWorkItemQueryRequestDto::class.java))
+                .retrieve().bodyToMono(AzureWorkItemResponseQueryDto::class.java)
+                .map { it.getWorkItemIds() }
+
+    }
 
     private fun getIterationId(azureIterationDto: AzureIterationDto): String {
         if (azureIterationDto.count != 1) {
@@ -73,10 +92,5 @@ class AzureInvoker(@Qualifier("azureWebClient") val webClient: WebClient) {
         return azureIterationDto.value[0].id
     }
 
-    private fun getWorkItemIds(azureWorkItemRelationDto: AzureWorkItemRelationDto): List<Long> {
-        return azureWorkItemRelationDto.workItemRelations.stream()
-                .map { workItemRelation -> workItemRelation.target.id }
-                .collect(Collectors.toList())
-    }
 
 }

@@ -1,9 +1,9 @@
 {
-  "count": 4,
+  "count": 6,
   "value": [
     {
       "id": 1,
-      "workItemId": 1,
+      "workItemId": 7,
       "rev": 1,
       "revisedBy": {
         "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
@@ -19,10 +19,10 @@
         "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
         "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
       },
-      "revisedDate": "2020-06-08T06:41:31.087Z",
+      "revisedDate": "2020-06-08T06:44:55.65Z",
       "fields": {
         "System.Id": {
-          "newValue": 1
+          "newValue": 7
         },
         "System.AreaId": {
           "newValue": 2
@@ -37,10 +37,10 @@
           "newValue": 1
         },
         "System.AuthorizedDate": {
-          "newValue": "2020-06-08T06:41:28.61Z"
+          "newValue": "2020-06-08T06:44:55.387Z"
         },
         "System.RevisedDate": {
-          "newValue": "2020-06-08T06:41:31.087Z"
+          "newValue": "2020-06-08T06:44:55.65Z"
         },
         "System.IterationId": {
           "newValue": 3
@@ -62,7 +62,7 @@
         },
         "System.AssignedTo": {},
         "System.CreatedDate": {
-          "newValue": "2020-06-08T06:41:28.61Z"
+          "newValue": "2020-06-08T06:44:55.387Z"
         },
         "System.CreatedBy": {
           "newValue": {
@@ -80,7 +80,7 @@
           }
         },
         "System.ChangedDate": {
-          "newValue": "2020-06-08T06:41:28.61Z"
+          "newValue": "2020-06-08T06:44:55.387Z"
         },
         "System.ChangedBy": {
           "newValue": {
@@ -116,7 +116,7 @@
           "newValue": 121908370
         },
         "System.Watermark": {
-          "newValue": 1
+          "newValue": 16
         },
         "System.IsDeleted": {
           "newValue": false
@@ -132,9 +132,6 @@
         },
         "System.IterationPath": {
           "newValue": "Actionable Agile Metrics\\Sprint 1"
-        },
-        "System.Title": {
-          "newValue": "PoC Montecarlo"
         },
         "System.BoardColumnDone": {
           "newValue": false
@@ -152,17 +149,20 @@
           "newValue": "To Do"
         },
         "Microsoft.VSTS.Common.StateChangeDate": {
-          "newValue": "2020-06-08T06:41:28.61Z"
+          "newValue": "2020-06-08T06:44:55.387Z"
         },
         "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_Kanban.Column": {
           "newValue": "To Do"
+        },
+        "System.Title": {
+          "newValue": "Calcular percentile"
         }
       },
-      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/1"
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates/1"
     },
     {
       "id": 2,
-      "workItemId": 1,
+      "workItemId": 7,
       "rev": 2,
       "revisedBy": {
         "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
@@ -178,19 +178,112 @@
         "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
         "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
       },
-      "revisedDate": "2020-06-08T06:41:45.703Z",
+      "revisedDate": "2020-06-08T06:45:06.68Z",
       "fields": {
         "System.Rev": {
           "oldValue": 1,
           "newValue": 2
         },
         "System.AuthorizedDate": {
-          "oldValue": "2020-06-08T06:41:28.61Z",
-          "newValue": "2020-06-08T06:41:31.087Z"
+          "oldValue": "2020-06-08T06:44:55.387Z",
+          "newValue": "2020-06-08T06:44:55.65Z"
         },
         "System.RevisedDate": {
-          "oldValue": "2020-06-08T06:41:31.087Z",
-          "newValue": "2020-06-08T06:41:45.703Z"
+          "oldValue": "2020-06-08T06:44:55.65Z",
+          "newValue": "2020-06-08T06:45:06.68Z"
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-06-08T06:44:55.387Z",
+          "newValue": "2020-06-08T06:44:55.65Z"
+        },
+        "System.Watermark": {
+          "oldValue": 16,
+          "newValue": 17
+        },
+        "Microsoft.VSTS.Common.StackRank": {
+          "newValue": 1375000000.0
+        }
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates/2"
+    },
+    {
+      "id": 3,
+      "workItemId": 7,
+      "rev": 3,
+      "revisedBy": {
+        "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
+        "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+        "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+        "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+        "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+      },
+      "revisedDate": "2020-08-06T06:42:12.03Z",
+      "fields": {
+        "System.Rev": {
+          "oldValue": 2,
+          "newValue": 3
+        },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-06-08T06:44:55.65Z",
+          "newValue": "2020-06-08T06:45:06.68Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-06-08T06:45:06.68Z",
+          "newValue": "2020-08-06T06:42:12.03Z"
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-06-08T06:44:55.65Z",
+          "newValue": "2020-06-08T06:45:06.68Z"
+        },
+        "System.Watermark": {
+          "oldValue": 17,
+          "newValue": 18
+        },
+        "System.Title": {
+          "oldValue": "Calcular percentile",
+          "newValue": "Calcular percentile (SLAs)"
+        }
+      },
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates/3"
+    },
+    {
+      "id": 4,
+      "workItemId": 7,
+      "rev": 4,
+      "revisedBy": {
+        "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
+        "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+        "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+        "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+        "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+      },
+      "revisedDate": "2020-08-06T06:42:12.263Z",
+      "fields": {
+        "System.Rev": {
+          "oldValue": 3,
+          "newValue": 4
+        },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-06-08T06:45:06.68Z",
+          "newValue": "2020-08-06T06:42:12.03Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-08-06T06:42:12.03Z",
+          "newValue": "2020-08-06T06:42:12.263Z"
         },
         "System.State": {
           "oldValue": "To Do",
@@ -201,23 +294,15 @@
           "newValue": "Started"
         },
         "System.ChangedDate": {
-          "oldValue": "2020-06-08T06:41:28.61Z",
-          "newValue": "2020-06-08T06:41:31.087Z"
+          "oldValue": "2020-06-08T06:45:06.68Z",
+          "newValue": "2020-08-06T06:42:12.03Z"
         },
         "System.Watermark": {
-          "oldValue": 1,
-          "newValue": 2
-        },
-        "System.BoardColumn": {
-          "oldValue": "To Do",
-          "newValue": "Doing"
-        },
-        "Microsoft.VSTS.Common.StateChangeDate": {
-          "oldValue": "2020-06-08T06:41:28.61Z",
-          "newValue": "2020-06-08T06:41:31.087Z"
+          "oldValue": 18,
+          "newValue": 51
         },
         "Microsoft.VSTS.Common.ActivatedDate": {
-          "newValue": "2020-06-08T06:41:31.087Z"
+          "newValue": "2020-08-06T06:42:12.03Z"
         },
         "Microsoft.VSTS.Common.ActivatedBy": {
           "newValue": {
@@ -234,17 +319,25 @@
             "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
           }
         },
+        "System.BoardColumn": {
+          "oldValue": "To Do",
+          "newValue": "Doing"
+        },
+        "Microsoft.VSTS.Common.StateChangeDate": {
+          "oldValue": "2020-06-08T06:44:55.387Z",
+          "newValue": "2020-08-06T06:42:12.03Z"
+        },
         "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_Kanban.Column": {
           "oldValue": "To Do",
           "newValue": "Doing"
         }
       },
-      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/2"
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates/4"
     },
     {
-      "id": 3,
-      "workItemId": 1,
-      "rev": 3,
+      "id": 5,
+      "workItemId": 7,
+      "rev": 5,
       "revisedBy": {
         "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
         "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
@@ -259,38 +352,39 @@
         "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
         "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
       },
-      "revisedDate": "2020-06-08T06:42:21.033Z",
+      "revisedDate": "2020-08-06T06:49:41.353Z",
       "fields": {
         "System.Rev": {
-          "oldValue": 2,
-          "newValue": 3
-        },
-        "System.AuthorizedDate": {
-          "oldValue": "2020-06-08T06:41:31.087Z",
-          "newValue": "2020-06-08T06:41:45.703Z"
-        },
-        "System.RevisedDate": {
-          "oldValue": "2020-06-08T06:41:45.703Z",
-          "newValue": "2020-06-08T06:42:21.033Z"
-        },
-        "System.ChangedDate": {
-          "oldValue": "2020-06-08T06:41:31.087Z",
-          "newValue": "2020-06-08T06:41:45.703Z"
-        },
-        "System.Watermark": {
-          "oldValue": 2,
+          "oldValue": 4,
           "newValue": 5
         },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-08-06T06:42:12.03Z",
+          "newValue": "2020-08-06T06:42:12.263Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-08-06T06:42:12.263Z",
+          "newValue": "2020-08-06T06:49:41.353Z"
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-08-06T06:42:12.03Z",
+          "newValue": "2020-08-06T06:42:12.263Z"
+        },
+        "System.Watermark": {
+          "oldValue": 51,
+          "newValue": 52
+        },
         "Microsoft.VSTS.Common.StackRank": {
-          "newValue": 666666666.0
+          "oldValue": 1375000000.0,
+          "newValue": 666615028.0
         }
       },
-      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/3"
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates/5"
     },
     {
-      "id": 4,
-      "workItemId": 1,
-      "rev": 4,
+      "id": 6,
+      "workItemId": 7,
+      "rev": 6,
       "revisedBy": {
         "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
         "name": "Ruiz Guijarro, F.J. (Francisco Javier) <francisco.javier.ruiz.guijarro@ing.com>",
@@ -308,42 +402,65 @@
       "revisedDate": "9999-01-01T00:00:00Z",
       "fields": {
         "System.Rev": {
-          "oldValue": 3,
-          "newValue": 4
-        },
-        "System.AuthorizedDate": {
-          "oldValue": "2020-06-08T06:41:45.703Z",
-          "newValue": "2020-06-08T06:42:21.033Z"
-        },
-        "System.RevisedDate": {
-          "oldValue": "2020-06-08T06:42:21.033Z",
-          "newValue": "9999-01-01T00:00:00Z"
-        },
-        "System.AssignedTo": {
-          "newValue": {
-            "displayName": "Garzon Sanchez, D. (Daniel)",
-            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/10072bf1-1af1-6b79-89ae-c439badf64bf",
-            "_links": {
-              "avatar": {
-                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.MTAwNzJiZjEtMWFmMS03Yjc5LTg5YWUtYzQzOWJhZGY2NGJm"
-              }
-            },
-            "id": "10072bf1-1af1-6b79-89ae-c439badf64bf",
-            "uniqueName": "daniel.garzon.sanchez@ing.com",
-            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.MTAwNzJiZjEtMWFmMS03Yjc5LTg5YWUtYzQzOWJhZGY2NGJm",
-            "descriptor": "aad.MTAwNzJiZjEtMWFmMS03Yjc5LTg5YWUtYzQzOWJhZGY2NGJm"
-          }
-        },
-        "System.ChangedDate": {
-          "oldValue": "2020-06-08T06:41:45.703Z",
-          "newValue": "2020-06-08T06:42:21.033Z"
-        },
-        "System.Watermark": {
           "oldValue": 5,
           "newValue": 6
+        },
+        "System.AuthorizedDate": {
+          "oldValue": "2020-08-06T06:42:12.263Z",
+          "newValue": "2020-08-06T06:49:41.353Z"
+        },
+        "System.RevisedDate": {
+          "oldValue": "2020-08-06T06:49:41.353Z",
+          "newValue": "9999-01-01T00:00:00Z"
+        },
+        "System.State": {
+          "oldValue": "Doing",
+          "newValue": "Done"
+        },
+        "System.Reason": {
+          "oldValue": "Started",
+          "newValue": "Completed"
+        },
+        "System.ChangedDate": {
+          "oldValue": "2020-08-06T06:42:12.263Z",
+          "newValue": "2020-08-06T06:49:41.353Z"
+        },
+        "System.Watermark": {
+          "oldValue": 52,
+          "newValue": 61
+        },
+        "System.BoardColumn": {
+          "oldValue": "Doing",
+          "newValue": "Done"
+        },
+        "Microsoft.VSTS.Common.StateChangeDate": {
+          "oldValue": "2020-08-06T06:42:12.03Z",
+          "newValue": "2020-08-06T06:49:41.353Z"
+        },
+        "Microsoft.VSTS.Common.ClosedDate": {
+          "newValue": "2020-08-06T06:49:41.353Z"
+        },
+        "Microsoft.VSTS.Common.ClosedBy": {
+          "newValue": {
+            "displayName": "Ruiz Guijarro, F.J. (Francisco Javier)",
+            "url": "https://spsprodweu3.vssps.visualstudio.com/A22ccf1f2-c19e-4cd8-9370-8b3c240c415f/_apis/Identities/b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "_links": {
+              "avatar": {
+                "href": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+              }
+            },
+            "id": "b2613f6c-8d68-4f6e-9fa8-06d3f0bc68e0",
+            "uniqueName": "francisco.javier.ruiz.guijarro@ing.com",
+            "imageUrl": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/GraphProfile/MemberAvatars/aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2",
+            "descriptor": "aad.NWRhZTA5MzctZDM0NS03NjFjLWE5YzEtNmRjMWZhNmI3YTM2"
+          }
+        },
+        "WEF_9997A2D39A2B42278AFFD0D77CEF97F2_Kanban.Column": {
+          "oldValue": "Doing",
+          "newValue": "Done"
         }
       },
-      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/1/updates/4"
+      "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/wit/workItems/7/updates/6"
     }
   ]
 }

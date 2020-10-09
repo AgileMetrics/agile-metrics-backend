@@ -4,16 +4,16 @@
             "rel": null,
             "source": null,
             "target": {
-                "id": 1,
-                "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/1"
+                "id": 2,
+                "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/2"
             }
         },
         {
             "rel": null,
             "source": null,
             "target": {
-                "id": 2,
-                "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/2"
+                "id": 7,
+                "url": "https://dev.azure.com/Actionable-Agile-Metrics/_apis/wit/workItems/7"
             }
         }
     ],
