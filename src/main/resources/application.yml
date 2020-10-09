@@ -15,6 +15,12 @@ agile-metrics:
     password: ryt2h45vr5huolv6sqfnf2y3ctei3o6ng4qwcb2bkbkayfzxtgla
 
 ---
+  spring:
+    profiles: azure
+    data:
+      mongodb:
+        uri: mongodb://mongo-user:secret@mongo:27017/agile-metrics?authSource=admin
+---
 spring:
   profiles: test
 

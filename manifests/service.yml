@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
     name: agilemetricsbackend
+    labels:
+        app: agilemetricsbackend
 spec:
     type: LoadBalancer
     ports:
