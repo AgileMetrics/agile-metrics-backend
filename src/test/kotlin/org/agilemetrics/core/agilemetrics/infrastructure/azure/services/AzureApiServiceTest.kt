@@ -1,12 +1,17 @@
 package org.agilemetrics.core.agilemetrics.infrastructure.azure.services
 
 import org.agilemetrics.core.agilemetrics.AgileMetricsApplication
+import org.agilemetrics.core.agilemetrics.infrastructure.azure.model.AzureApiContext
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import reactor.test.StepVerifier
@@ -19,11 +24,23 @@ import java.time.format.DateTimeFormatter
 internal class AzureApiServiceTest {
 
     @Autowired
+    private lateinit var azureApiContext:AzureApiContext
+
+    @Autowired
     private lateinit var azureApiService: AzureApiService
 
     private val expectedWorkItemIds: List<Long> = listOf(2, 7)
     private val expectedIterationId = "d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75"
     private val workItemId2: Long = 2
+
+    @BeforeEach
+    fun before(){
+        azureApiContext.setContext("Actionable-Agile-Metrics",
+                "Actionable Agile Metrics",
+                "user",
+                "password" )
+    }
+
 
     @Test
     @DisplayName(" Given an azureApiService object "

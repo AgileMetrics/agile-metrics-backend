@@ -25,10 +25,10 @@ class AzureApiService(@Qualifier("azureWebClient") private val webClient: WebCli
      * @return The internal Azure iteration ID
      */
     fun getCurrentIterationId(): Mono<String> {
-        azureApiContext.getUsername()
+
         return webClient.get()
-                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/work/teamsettings/iterations?\$timeframe=current&api-version=6.0")
-                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!!!) }
+                .uri("${azureApiContext.organization}/${azureApiContext.project}/_apis/work/teamsettings/iterations?\$timeframe=current&api-version=6.0")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.username!!, azureApiContext.password!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureIterationDto::class.java)
                 .map { getIterationId(it) }
@@ -41,8 +41,8 @@ class AzureApiService(@Qualifier("azureWebClient") private val webClient: WebCli
      */
     fun getWorkItemIdsByIterationId(iterationId: String): Mono<List<Long>> {
         return webClient.get()
-                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/work/teamsettings/iterations/$iterationId/workitems?api-version=6.0-preview.1")
-                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
+                .uri("${azureApiContext.organization}/${azureApiContext.project}/_apis/work/teamsettings/iterations/$iterationId/workitems?api-version=6.0-preview.1")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.username!!, azureApiContext.password!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureWorkItemRelationDto::class.java)
                 .map { it.getWorkItemIds() }
@@ -55,8 +55,8 @@ class AzureApiService(@Qualifier("azureWebClient") private val webClient: WebCli
      */
     fun getWorkItemsBatchInformation(workItemIds: List<Long>): Mono<AzureWorkItemBatchResponseDto> {
         return webClient.post()
-                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/wit/workitemsbatch?api-version=6.0")
-                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
+                .uri("${azureApiContext.organization}/${azureApiContext.project}/_apis/wit/workitemsbatch?api-version=6.0")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.username!!, azureApiContext.password!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(Mono.just(AzureWorkItemBatchRequestDto(workItemIds)), AzureWorkItemBatchRequestDto::class.java))
@@ -70,8 +70,8 @@ class AzureApiService(@Qualifier("azureWebClient") private val webClient: WebCli
      */
     fun getWorkItemUpdateInformation(workitemId: Long): Mono<AzureWorkItemUpdateInformationDto> {
         return webClient.get()
-                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/wit/workItems/$workitemId/updates")
-                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
+                .uri("${azureApiContext.organization}/${azureApiContext.project}/_apis/wit/workItems/$workitemId/updates")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.username!!, azureApiContext.password!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve().bodyToMono(AzureWorkItemUpdateInformationDto::class.java)
     }
@@ -83,8 +83,8 @@ class AzureApiService(@Qualifier("azureWebClient") private val webClient: WebCli
      */
     fun executeWorkItemQuery(query: String): Mono<List<Long>> {
         return webClient.post()
-                .uri("${azureApiContext.getOrganization()}${azureApiContext.getProject()}/_apis/wit/wiql?api-version=6.0")
-                .headers { headers -> headers.setBasicAuth(azureApiContext.getUsername()!!, azureApiContext.getPassword()!!) }
+                .uri("${azureApiContext.organization}/${azureApiContext.project}/_apis/wit/wiql?api-version=6.0")
+                .headers { headers -> headers.setBasicAuth(azureApiContext.username!!, azureApiContext.password!!) }
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(Mono.just(AzureWorkItemQueryRequestDto(query)), AzureWorkItemQueryRequestDto::class.java))

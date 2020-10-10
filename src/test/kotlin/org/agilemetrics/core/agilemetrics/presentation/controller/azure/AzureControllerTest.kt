@@ -43,8 +43,11 @@ internal class AzureControllerTest {
             + " And save in the database these work items ")
 
     fun shouldTestFillWorkItemsFromAzure() {
+        // Given
+        val azureRequestDto = AzureRequestDto(organization="Actionable-Agile-Metrics", project = "Actionable Agile Metrics", username = "user", password = "password")
+
         // When
-        azureController.fillWorkItemsFromAzure().block();
+        azureController.fillWorkItemsFromAzure(azureRequestDto).block();
 
         //Then
         StepVerifier

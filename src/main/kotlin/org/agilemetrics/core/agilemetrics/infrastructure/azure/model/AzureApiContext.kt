@@ -1,31 +1,22 @@
 package org.agilemetrics.core.agilemetrics.infrastructure.azure.model
 
 open class AzureApiContext {
-    private var organization: String? = null
-    private var project: String? = null
-    private var username: String? = null
-    private var password: String? = null
+    private var _organization: String? = null
+    val organization: String? get() = _organization
 
-    fun getOrganization(): String? {
-        return this.organization
-    }
+    private var _project: String? = null
+    val project: String? get() = _project
 
-    fun getProject(): String? {
-        return this.project
-    }
+    private var _username: String? = null
+    val username: String? get() = _username
 
-    fun getUsername(): String? {
-        return this.username
-    }
+    private var _password: String? = null
+    val password: String? get() = _password
 
-    fun getPassword(): String? {
-        return this.password
-    }
-
-    fun setContext(organization: String?, project: String?, username: String?, password: String?) {
-        this.organization = organization
-        this.project = project
-        this.username = username
-        this.password = password
+    fun setContext(organization: String, project: String, username: String, password: String) {
+        this._organization = organization
+        this._project = project
+        this._username = username
+        this._password = password
     }
 }
