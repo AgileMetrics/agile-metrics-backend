@@ -1,0 +1,16 @@
+{
+    "count": 1,
+    "value": [
+        {
+            "id": "d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75",
+            "name": "Sprint 1",
+            "path": "Actionable Agile Metrics\\Sprint 1",
+            "attributes": {
+                "startDate": null,
+                "finishDate": null,
+                "timeFrame": "current"
+            },
+            "url": "https://dev.azure.com/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/d9faf365-485b-4671-bae7-7d065193d3b4/_apis/work/teamsettings/iterations/d42eda64-9c72-4b1b-8b2a-8cfa7cb69e75"
+        }
+    ]
+}

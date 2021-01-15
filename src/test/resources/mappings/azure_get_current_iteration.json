@@ -1,0 +1,22 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/Actionable-Agile-Metrics/afeee19d-8d90-4249-9563-e3affd933c68/_apis/work/teamsettings/iterations?$timeframe=current&api-version=6.0",
+        "headers": {
+            "Accept": {
+                "contains": "application/json"
+            }
+        }
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "azure_get_current_iteration_response_ok.json",
+        "headers": {
+            "Content-Type": "application/json",
+            "charset": "UTF-8",
+            "Cache-Control": "no-cache"
+        }
+    }
+}
+
+
